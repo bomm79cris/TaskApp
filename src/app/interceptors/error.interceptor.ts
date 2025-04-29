@@ -7,10 +7,10 @@ import {
   HttpErrorResponse
 } from '@angular/common/http';
 import { catchError, concatMap, finalize, Observable, of, retryWhen, throwError } from 'rxjs';
-import { LoginService } from './shared/services/login.service';
-import { CodigoError } from './enums/codigo-error.enum';
-import { LoadingService } from './shared/services/loading.service';
-import { MessageService } from './shared/services/message.service';
+import { LoginService } from '../shared/services/login.service';
+import { CodigoError } from '../enums/codigo-error.enum';
+import { LoadingService } from '../shared/services/loading.service';
+import { MessageService } from '../shared/services/message.service';
 
 
 @Injectable(

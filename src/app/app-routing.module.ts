@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LogoutGuard } from './logout.guard';
-import { AuthGuard } from './auth.guard';
+import { LogoutGuard } from './guards/logout.guard';
+import { AuthGuard } from './guards/auth.guard';
+import { AuthComponent } from './auth/auth.component';
+import { UnsavedChangesGuard } from './guards/unsaved-changes.guard';
 
 const routes: Routes = [
   { path: '', loadChildren: () => import('./login/login.module').then(m => m.LoginModule),canActivate:[LogoutGuard]},
-  { path: 'autorizado', loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule),canActivate: [AuthGuard]},
+  {  path: 'autorizado',component: AuthComponent,canActivate: [AuthGuard],canDeactivate: [UnsavedChangesGuard]},
   { path: '**',  redirectTo: ''},
 
 ];

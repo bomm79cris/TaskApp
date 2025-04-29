@@ -1,0 +1,77 @@
+/* Contenedor principal para las acciones del encabezado */
+.task-header-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+  }
+  
+  .filter-actions {
+    display: flex;
+    align-items: center;
+  }
+  
+  .filter-actions label {
+    margin-right: 10px;
+  }
+  
+  .filter-actions select {
+    padding: 5px 10px;
+    font-size: 14px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
+  
+  .create-logout-actions button {
+    margin-left: 10px;
+  }
+  
+  /* Contenedor principal del tablero */
+  .task-board {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  /* Contenedor de las tarjetas */
+  .task-card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+    gap: 20px;
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px;
+  }
+  
+  /* Estilo de la tarjeta */
+  .task-card {
+    padding: 15px;
+    transition: transform 0.3s;
+    box-sizing: border-box;
+    height: 15rem;
+  }
+  
+  .task-card:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Cabecera de la tarjeta */
+  .task-header {
+    background-color: #f1f1f1;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  /* Cuerpo de la tarjeta */
+  .task-body {
+    padding: 10px;
+    font-size: 14px;
+  }
+  
+  /* Pie de la tarjeta (sin contenido por ahora) */
+  .task-footer {
+    text-align: right;
+  }
+  

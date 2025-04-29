@@ -1,1 +1,43 @@
-<p>auth works!</p>
+<div class="task-header-actions">
+    <div class="filter-actions">
+      <label for="statusFilter">Filtrar por Status:</label>
+      <select id="statusFilter" [(ngModel)]="selectedStatus" (change)="filterTasks()">
+        <option value="">Todos</option>
+        <option value="pendiente">Pendiente</option>
+        <option value="completada">Completada</option>
+      </select>
+    </div>
+  <div class="form">
+    <form [formGroup]="taskForm" (ngSubmit)="createTask()">
+        <input formControlName="title" placeholder="Nueva tarea" />
+        <button type="submit">Agregar</button>
+      </form>
+  </div>
+    <div class="create-logout-actions">
+      <button pButton type="button" label="Guardar" (click)="saveToLocalStorage()"><i class="pi pi-save"></i></button>
+      <button pButton type="button" label="Logout"  (click)="logout()"><i class="pi pi-sign-out"></i></button>
+    </div>
+  </div>
+  
+  <div class="task-board">
+    <div class="task-card-container">
+      <p-card *ngFor="let task of filteredTasks" class="task-card" [style]="{ width: '18rem' ,backgroundColor: (task.status | statusColor)}">
+        <ng-template pTemplate="header">
+          <div class="task-header">
+            <h5>{{ task.title }}</h5>
+          </div>
+        </ng-template>
+        <div class="task-body"style="color: azure;">
+          <p>Status: <strong>{{ task.status }}</strong></p>
+        </div>
+        <ng-template pTemplate="footer" >
+            <p-inputSwitch 
+            [ngModel]="task.status === 'completada'" 
+            (onChange)="toggleTaskStatus(task.id)">
+          </p-inputSwitch>
+          
+        </ng-template>
+      </p-card>
+    </div>
+  </div>
+  

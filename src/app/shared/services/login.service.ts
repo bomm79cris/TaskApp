@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { Rutas } from '../../enviroment/enviroment.urls';
 import { jwtDecode } from 'jwt-decode';
 
 @Injectable({
@@ -29,7 +28,8 @@ export class LoginService {
   }
 
   login(email: string, password: string) {
-    return this.http.post<any>(`${Rutas.UrlApi}/api/Auth/login`, { email, password })
+    //Utilizo un get para mockear el response del login y que me regrese un token mockeado
+    return this.http.get<any>(`https://dummyjson.com/c/c779-6c8a-4b5a-a459`)
       .pipe(
         map(response => {
           if (response.token) {
