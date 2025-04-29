@@ -1,0 +1,27 @@
+<div class="login">
+<div class="login-container">
+    <h2>Iniciar Sesión</h2>
+    <form (ngSubmit)="onSubmit()" [formGroup]="loginForm">
+      <div class="mb-3">
+        <label for="email" class="form-label">Correo Electrónico</label>
+        <div class="input-group">
+          <span class="input-group-text" id="basic-addon1"><i class="pi pi-at"></i></span>
+          <input type="email" formControlName="email" class="form-control" id="email" placeholder="example@correo.com" required>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Contraseña</label>
+        <div class="input-group">
+          <span class="input-group-text" id="basic-addon1">🔒</span>
+          <input type="password" formControlName="password" class="form-control" id="password" placeholder="Contraseña" required>
+        </div>
+      </div>
+      <div class="d-grid">
+        <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid">Iniciar Sesión</button>
+      </div>
+    </form>
+    <div class="footer">
+      &copy; 2025 TaskApp. Prueba técnica BlauTech
+    </div>
+  </div>
+  </div>

@@ -39,7 +39,8 @@
               }
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/primeicons/primeicons.css"
             ],
             "scripts": [],
             "server": "src/main.server.ts",
@@ -110,5 +111,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "3f79b70d-2c47-4842-91fe-d80246cc00f0"
   }
 }
